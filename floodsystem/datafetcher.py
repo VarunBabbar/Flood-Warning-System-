@@ -13,7 +13,6 @@ import os
 import dateutil.parser
 import requests
 
-
 def fetch(url):
     """Fetch data from url and return fetched JSON object"""
     r = requests.get(url)
