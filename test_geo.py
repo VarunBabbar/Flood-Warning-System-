@@ -12,9 +12,9 @@ stations = build_station_list()
 
 def test_stations_by_distance():
     result = stations_by_distance(stations, p=(0,0))
-    for n in range(1, len(result)):
-        x = result[n]
-        y = result[n-1]
+    for i in range(1, len(result)):
+        x = result[i]
+        y = result[i-1]
         assert x[2] >= y[2]
 
 #Task 1E
