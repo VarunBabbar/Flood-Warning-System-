@@ -17,5 +17,5 @@ print(m)
 for i in stations:
     for k in m:
         if k == i.name:
-            dates, levels = fetch_measure_levels(i.measure_id, dt = timedelta(days = 5))
-            plot_water_level_with_fit(i, dates, levels)
+            dates, levels = fetch_measure_levels(i.measure_id, dt = timedelta(days = 2))
+            plot_water_level_with_fit(i, dates, levels, 4)
