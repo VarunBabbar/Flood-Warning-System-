@@ -15,7 +15,6 @@ class MonitoringStation:
         self.station_id = station_id
         self.measure_id = measure_id
 
-        # Handle case of erroneous data where data system returns
         # '[label, label]' rather than 'label'
         self.name = label
         if isinstance(label, list):
@@ -42,6 +41,14 @@ class MonitoringStation:
     def typical_range_consistent(self):
         return self.typical_range is not None and float(self.typical_range[1]) - float(self.typical_range[0]) >= 0
 
+# Task 2B
+    def relative_water_level(self, latest_level):
+       if latest_level is not None and self.typical_range_consistent():
+           return (float(latest_level) - float(self.typical_range[0]))/(float(self.typical_range[1]) - float(self.typical_range[0]))
+       else: 
+           return None
+
+# Task 1F
 def inconsistent_typical_range_stations(stations):
     a = []
     for i in stations:
